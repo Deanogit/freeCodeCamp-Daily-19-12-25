@@ -6,3 +6,13 @@
 // 2 and 8 (2 + 8 = 10), whose indices are 0 and 4
 // 4 and 6 (4 + 6 = 10), whose indices are 2 and 3
 // Add all the indices together to get a return value of 9.
+
+function pairwise(arr, target) {
+  console.log(arr, target);
+  // if arr[i] === target - arr[i + 1]
+  for (const [value, index] of arr) {
+    console.log(value, index);
+  }
+  // push indicies to valid arr
+  return arr;
+}
