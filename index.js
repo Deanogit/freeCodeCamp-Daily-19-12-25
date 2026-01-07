@@ -17,24 +17,27 @@ function pairwise(arr, target) {
   for (let i = 0; i < arr.length; i++) {
     // pick up the first number
     // pick an index i
-    let index = i;
+    // let index = i;
     // check if i is already in usedIndicies, if so, skip it
     if (usedIndicies.includes(i)) {
       // skip
+      continue;
     }
     // if not start second loop at j = i + 1
     for (let j = i + 1; j < arr.length; j++) {
       // check if j is already in usedIndicies, if so, skip it
       if (usedIndicies.includes(j)) {
         // skip it
+        continue;
         // if arr[i] + arr[j] = target, pair!
       } else if (arr[i] + arr[j] === target) {
         // // add both i & j to usedIndicies
-        usedIndicies.push(arr[i], arr[j]);
+        usedIndicies.push(i, j);
         // // add i + j to running totalSum
-        runningTotal += arr[i] + arr[j];
+        runningTotal += i + j;
+        // // break the inner loop (since i is used up now)
+        break;
       }
-      // // break the inner loop (since i is used up now)
     }
   }
 
@@ -44,4 +47,5 @@ function pairwise(arr, target) {
   // }
   // push indicies to valid arr
   // return arr;
+  return runningTotal;
 }
