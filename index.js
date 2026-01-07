@@ -9,8 +9,26 @@
 
 function pairwise(arr, target) {
   console.log(arr, target);
+  // keep a used list
+  const usedIndices = [];
+
+  // Nested loops
+  for (let i = 0; i < arr.length; i++) {
+    // pick up the first number
+    for (let j = 1; j < arr.length; j++) {
+      // pick an index i
+      // check if i is already in usedIndicies, if so, skip it
+      // if not start second loop at j = i + 1
+      // check if j is already in usedIndicies, if so, skip it
+      // if arr[i] + arr[j] = target, pair!
+      // // add both i & j to usedIndicies
+      // // add i + j to running totalSum
+      // // break the inner loop (since i is used up now)
+    }
+  }
+
   // if arr[i] === target - arr[i + 1]
-  for (const [value, index] of arr) {
+  for (const [value, index] of arr.entries()) {
     console.log(value, index);
   }
   // push indicies to valid arr
